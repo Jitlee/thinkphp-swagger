@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://php.net/manual/es/function.file-get-contents.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" class=" js flexbox flexboxlegacy datauri"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: file_get_contents - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/es/function.file-get-contents.php">
+ <link rel="shorturl" href="http://php.net/file-get-contents">
+ <link rel="alternate" href="http://php.net/file-get-contents" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/es/index.php">
+ <link rel="index" href="http://php.net/manual/es/ref.filesystem.php">
+ <link rel="prev" href="http://php.net/manual/es/function.file-exists.php">
+ <link rel="next" href="http://php.net/manual/es/function.file-put-contents.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/function.file-get-contents.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/function.file-get-contents.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/function.file-get-contents.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/function.file-get-contents.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/function.file-get-contents.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/function.file-get-contents.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/kr/function.file-get-contents.php" hreflang="kr">
+ <link rel="alternate" href="http://php.net/manual/ro/function.file-get-contents.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/function.file-get-contents.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/function.file-get-contents.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/function.file-get-contents.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./PHP_ file_get_contents - Manual_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ file_get_contents - Manual_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ file_get_contents - Manual_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ file_get_contents - Manual_files/cached(3).php" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <!--<base href="http://php.net/manual/es/function.file-get-contents.php">--><base href=".">
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="./PHP_ file_get_contents - Manual_files/logo.php" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-06-15-1">International PHP Conference 2016 - fall edition</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+	<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+	<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+	<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/es/function.file-put-contents.php">
+          file_put_contents »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/es/function.file-exists.php">
+          « file_exists        </a>
+      </div>
+          <ul>
+            <li><a href="http://php.net/manual/es/index.php">Manual de PHP</a></li>      <li><a href="http://php.net/manual/es/funcref.php">Referencia de funciones</a></li>      <li><a href="http://php.net/manual/es/refs.fileprocess.file.php">Extensiones relacionadas con el sistema de ficheros</a></li>      <li><a href="http://php.net/manual/es/book.filesystem.php">Sistema de Ficheros</a></li>      <li><a href="http://php.net/manual/es/ref.filesystem.php">Funciones del Sistema de Archivos</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/function.file-get-contents.php">English</option>
+            <option value="pt_BR/function.file-get-contents.php">Brazilian Portuguese</option>
+            <option value="zh/function.file-get-contents.php">Chinese (Simplified)</option>
+            <option value="fr/function.file-get-contents.php">French</option>
+            <option value="de/function.file-get-contents.php">German</option>
+            <option value="ja/function.file-get-contents.php">Japanese</option>
+            <option value="kr/function.file-get-contents.php">Korean</option>
+            <option value="ro/function.file-get-contents.php">Romanian</option>
+            <option value="ru/function.file-get-contents.php">Russian</option>
+            <option value="es/function.file-get-contents.php" selected="selected">Spanish</option>
+            <option value="tr/function.file-get-contents.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=es/function.file-get-contents.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.file-get-contents">Report a Bug</a>
+    </div>
+  </div><div id="function.file-get-contents" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">file_get_contents</h1> 
+  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">file_get_contents</span> — <span class="dc-title">Transmite un fichero entero a una cadena</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.file-get-contents-description">
+  <h3 class="title">Descripción<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-description"> ¶</a></h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><strong>file_get_contents</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$maxlen</code></span>
+  ]]]] )</div>
+
+  <p class="para rdfs-comment"> 
+   Esta función es similar a <span class="function"><a href="http://php.net/manual/es/function.file.php" class="function">file()</a></span>, excepto que
+   <span class="function"><strong>file_get_contents()</strong></span> devuelve el fichero a un
+   <span class="type"><a href="http://php.net/manual/es/language.types.string.php" class="type string">string</a></span>, comenzando por el <code class="parameter">offset</code> especificado
+   hasta <code class="parameter">maxlen</code> bytes. Si falla, 
+   <span class="function"><strong>file_get_contents()</strong></span> devolverá <strong><code>FALSE</code></strong>.
+  </p>
+  <p class="para">
+   <span class="function"><strong>file_get_contents()</strong></span> es la manera preferida de transmitir el
+   contenido de un fichero a una cadena. Usa técnicas de mapeado de memoria, si
+   está soportado por su sistema operativo, para mejorar el rendimiento.
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   </p><p class="para">
+    Si se está abriendo un URI con caracteres especiales, tales como espacios,
+    se necesita codificar el URI con <span class="function"><a href="http://php.net/manual/es/function.urlencode.php" class="function">urlencode()</a></span>.
+   </p>
+  </blockquote>
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.file-get-contents-parameters">
+  <h3 class="title">Parámetros<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-parameters"> ¶</a></h3>
+  <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Nombre del fichero a leer.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">        
+        A partir de PHP 5, se puede usar la constante <strong><code>FILE_USE_INCLUDE_PATH</code></strong>
+        para lanzar la búsqueda en
+        <a href="http://php.net/manual/es/ini.core.php#ini.include-path" class="link">include_path</a>.
+       </p>
+      </blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Un recurso de contexto válido creado con
+       <span class="function"><a href="http://php.net/manual/es/function.stream-context-create.php" class="function">stream_context_create()</a></span>. Si no se necesita usar un
+       contexto a medida, se puede saltar este parámetro usando <strong><code>NULL</code></strong>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">offset</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El índice donde comienza la lectura en el flujo original.
+      </p>
+      <p class="para">
+       La búsqueda de (<code class="parameter">offset</code>) no está soportada con ficheros remotos.
+       Intentar buscar un fichero no local puede funcionar con índices pequeños, pero
+       es impredecible debido a que trabaja sobre el flujo almacenado en buffer.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">maxlen</code></dt>
+
+     <dd>
+
+      <p class="para">
+       La longitud máxima de los datos leídos. De manera predeterminada se lee hasta que
+       se alcance el final del fichero. Observe que este parámetro se aplica al
+       flujo procesado por los filtros.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.file-get-contents-returnvalues">
+  <h3 class="title">Valores devueltos<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-returnvalues"> ¶</a></h3>
+  <p class="para">
+   Esta función devuelve los datos leídos  o <strong><code>FALSE</code></strong> en caso de error.
+  </p>
+  <div class="warning"><strong class="warning">Advertencia</strong><p class="simpara">Esta función puede
+devolver el valor booleano <strong><code>FALSE</code></strong>, pero también puede devolver un valor no booleano que se
+evalúa como <strong><code>FALSE</code></strong>. Por favor lea la sección sobre <a href="http://php.net/manual/es/language.types.boolean.php" class="link">Booleanos</a> para más
+información. Use <a href="http://php.net/manual/es/language.operators.comparison.php" class="link">el operador
+===</a> para comprobar el valor devuelto por esta
+función.</p></div>
+ </div>
+
+ 
+ <div class="refsect1 errors" id="refsect1-function.file-get-contents-errors">
+  <h3 class="title">Errores/Excepciones<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-errors"> ¶</a></h3>
+  <p class="para">
+   Se genera un error de nivel <strong><code>E_WARNING</code></strong> si <code class="parameter">filename</code> no se pudo encontrar, <code class="parameter">maxlength</code>
+   es menor de cero, o si falla la búsqueda del <code class="parameter">offset</code> especificado en el flujo.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.file-get-contents-examples">
+  <h3 class="title">Ejemplos<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-examples"> ¶</a></h3>
+  <div class="example" id="example-2610">
+    <p><strong>Ejemplo #1 Obtiene y muestra el código fuente de la página de inicio de un sitio web</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$página_inicio&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br>echo&nbsp;</span><span style="color: #0000BB">$página_inicio</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-2611">
+    <p><strong>Ejemplo #2 Buscar dentro de include_path</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">//&nbsp;&lt;=&nbsp;PHP&nbsp;5<br></span><span style="color: #0000BB">$fichero&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'./gente.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br></span><span style="color: #FF8000">//&nbsp;&gt;&nbsp;PHP&nbsp;5<br></span><span style="color: #0000BB">$fichero&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'./gente.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILE_USE_INCLUDE_PATH</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-2612">
+    <p><strong>Ejemplo #3 Leer una sección de un fichero</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">//&nbsp;Leer&nbsp;14&nbsp;caracteres&nbsp;comenzando&nbsp;desde&nbsp;el&nbsp;carácter&nbsp;número&nbsp;21<br></span><span style="color: #0000BB">$sección&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'./gente.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">);<br></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$sección</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo 
+sería algo similar a:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>string(14) "lle Bjori Ro" 
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-2613">
+    <p><strong>Ejemplo #4 Usar contextos de flujo</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">//&nbsp;Crear&nbsp;un&nbsp;flujo<br></span><span style="color: #0000BB">$opciones&nbsp;</span><span style="color: #007700">=&nbsp;array(<br>&nbsp;&nbsp;</span><span style="color: #DD0000">'http'</span><span style="color: #007700">=&gt;array(<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'method'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"GET"</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'header'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"Accept-language:&nbsp;en\r\n"&nbsp;</span><span style="color: #007700">.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"Cookie:&nbsp;foo=bar\r\n"<br>&nbsp;&nbsp;</span><span style="color: #007700">)<br>);<br><br></span><span style="color: #0000BB">$contexto&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(</span><span style="color: #0000BB">$opciones</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">//&nbsp;Abre&nbsp;el&nbsp;fichero&nbsp;usando&nbsp;las&nbsp;cabeceras&nbsp;HTTP&nbsp;establecidas&nbsp;arriba<br></span><span style="color: #0000BB">$fichero&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$contexto</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+ </div>
+
+ 
+ <div class="refsect1 changelog" id="refsect1-function.file-get-contents-changelog">
+  <h3 class="title">Historial de cambios<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-changelog"> ¶</a></h3>
+  <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.1.0</td>
+       <td>
+        Se añadieron los parámetros <code class="parameter">offset</code> y
+        <code class="parameter">maxlen</code>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.file-get-contents-notes">
+  <h3 class="title">Notas<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-notes"> ¶</a></h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Esta función es
+segura binariamente.</span></p></blockquote>
+  <div class="tip"><strong class="tip">Sugerencia</strong><p class="simpara">Se puede emplear un URL como
+nombre de fichero con esta función si las <a href="http://php.net/manual/es/filesystem.configuration.php#ini.allow-url-fopen" class="link">envolturas de fopen</a> han sido activadas.
+Véase <span class="function"><a href="http://php.net/manual/es/function.fopen.php" class="function">fopen()</a></span> para más información de cómo especificar el nombre
+de fichero. Véanse las <a href="http://php.net/manual/es/wrappers.php" class="xref">Protocolos y Envolturas soportados</a>; continen enlaces con información
+sobre las diferentes capacidades que tienen las envolturas, notas sobre su empleo,
+e información de cualquier variable predefinida que podría
+proporcionarse.</p></div>
+  <div class="warning"><strong class="warning">Advertencia</strong><p class="para">Cuando se usa SSL,
+Microsoft IIS violará el protocolo, cerrando la conexión sin mandar un
+indicador <em>close_notify</em>. PHP avisará de esto con este mensaje "SSL:
+Fatal Protocol Error", cuando llegue al final de los datos. Una
+solución a este problema es bajar el nivel de <a href="http://php.net/manual/es/errorfunc.configuration.php#ini.error-reporting" class="link">aviso de errores</a> del sistema para
+que no incluya advertencias.
+PHP pueden detectar servidores IIS con este problema cuando se
+abre un flujo usando <em>https://</em> y suprime
+la advertencia. Si usáis la función <span class="function"><a href="http://php.net/manual/es/function.fsockopen.php" class="function">fsockopen()</a></span> para crear un
+socket <em>ssl://</em>, tendréis que suprimir la advertencia
+explicitamente.</p></div>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.file-get-contents-seealso">
+  <h3 class="title">Ver también<a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#refsect1-function.file-get-contents-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.file.php" class="function" rel="rdfs-seeAlso">file()</a> - Transfiere un fichero completo a un array</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.fgets.php" class="function" rel="rdfs-seeAlso">fgets()</a> - Obtiene una línea desde el puntero a un fichero</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.fread.php" class="function" rel="rdfs-seeAlso">fread()</a> - Lectura de un fichero en modo binario seguro</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.readfile.php" class="function" rel="rdfs-seeAlso">readfile()</a> - Realizar la salida de un fichero</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.file-put-contents.php" class="function" rel="rdfs-seeAlso">file_put_contents()</a> - Escribe una cadena a un fichero</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.stream-get-contents.php" class="function" rel="rdfs-seeAlso">stream_get_contents()</a> - Transfiere el resto de un flujo a una cadena</span></li>
+    <li class="member"><span class="function"><a href="http://php.net/manual/es/function.stream-context-create.php" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - Crear un contexto de flujo</span></li>
+    <li class="member"><a href="http://php.net/manual/es/reserved.variables.httpresponseheader.php" class="link">$http_response_header</a></li>
+   </ul>
+  
+ </div>
+
+ 
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=function.file-get-contents&amp;redirect=http://php.net/manual/es/function.file-get-contents.php"><img src="./PHP_ file_get_contents - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">37 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="108309">  <div class="votes">
+    <div id="Vu108309">
+    <a href="http://php.net/manual/vote-note.php?id=108309&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108309">
+    <a href="http://php.net/manual/vote-note.php?id=108309&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108309" title="59% like this...">
+    78
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#108309" class="name">
+  <strong class="user"><em>Bart Friederichs</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#108309"> ¶</a><div class="date" title="2012-04-16 12:17"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom108309">
+<div class="phpcode"><code><span class="html">
+file_get_contents can do a POST, create a context for that first:<br><br>$opts = array('http' =&gt;<br>&nbsp; array(<br>&nbsp; &nbsp; 'method'&nbsp; =&gt; 'POST',<br>&nbsp; &nbsp; 'header'&nbsp; =&gt; "Content-Type: text/xml\r\n".<br>&nbsp; &nbsp; &nbsp; "Authorization: Basic ".base64_encode("$https_user:$https_password")."\r\n",<br>&nbsp; &nbsp; 'content' =&gt; $body,<br>&nbsp; &nbsp; 'timeout' =&gt; 60<br>&nbsp; )<br>);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>$context&nbsp; = stream_context_create($opts);<br>$url = '<a href="https:" rel="nofollow" target="_blank">https://</a>'.$https_server;<br>$result = file_get_contents($url, false, $context, -1, 40000);</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="82527">  <div class="votes">
+    <div id="Vu82527">
+    <a href="http://php.net/manual/vote-note.php?id=82527&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd82527">
+    <a href="http://php.net/manual/vote-note.php?id=82527&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V82527" title="54% like this...">
+    30
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#82527" class="name">
+  <strong class="user"><em>joachimb at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#82527"> ¶</a><div class="date" title="2008-04-15 02:38"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom82527">
+<div class="phpcode"><code><span class="html">
+Setting the timeout properly without messing with ini values:
+<br>
+<br><span class="default">&lt;?php
+<br>$ctx </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(array(
+<br>&nbsp; &nbsp; </span><span class="string">'http' </span><span class="keyword">=&gt; array(
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'timeout' </span><span class="keyword">=&gt; </span><span class="default">1
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">)
+<br>&nbsp; &nbsp; )
+<br>);
+<br></span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://example.com/" rel="nofollow" target="_blank">http://example.com/</a>"</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$ctx</span><span class="keyword">);
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="111708">  <div class="votes">
+    <div id="Vu111708">
+    <a href="http://php.net/manual/vote-note.php?id=111708&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd111708">
+    <a href="http://php.net/manual/vote-note.php?id=111708&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V111708" title="53% like this...">
+    18
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#111708" class="name">
+  <strong class="user"><em>volkan-k at users dot sourceforge dot net</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#111708"> ¶</a><div class="date" title="2013-03-19 09:08"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom111708">
+<div class="phpcode"><code><span class="html">
+If you are using file_get_contents() function to retrieve HTTP url and printing HTTP content, you can also send original content-type header using $http_response_header and header() function;<br><br><span class="default">&lt;?php<br><br></span><span class="keyword">foreach (</span><span class="default">$http_response_header </span><span class="keyword">as </span><span class="default">$value</span><span class="keyword">) {<br>&nbsp; &nbsp; if (</span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'/^Content-Type:/i'</span><span class="keyword">, </span><span class="default">$value</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Successful match<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">,</span><span class="default">false</span><span class="keyword">);<br>&nbsp; &nbsp; }<br>}<br><br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="85008">  <div class="votes">
+    <div id="Vu85008">
+    <a href="http://php.net/manual/vote-note.php?id=85008&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd85008">
+    <a href="http://php.net/manual/vote-note.php?id=85008&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V85008" title="53% like this...">
+    20
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#85008" class="name">
+  <strong class="user"><em>colnector bla-at_bla colnect.com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#85008"> ¶</a><div class="date" title="2008-08-10 02:34"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom85008">
+<div class="phpcode"><code><span class="html">
+A UTF-8 issue I've encountered is that of reading a URL with a non-UTF-8 encoding that is later displayed improperly since file_get_contents() related to it as UTF-8. This small function should show you how to address this issue:
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="keyword">function </span><span class="default">file_get_contents_utf8</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">) {
+<br>&nbsp; &nbsp;&nbsp; </span><span class="default">$content </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; return </span><span class="default">mb_convert_encoding</span><span class="keyword">(</span><span class="default">$content</span><span class="keyword">, </span><span class="string">'UTF-8'</span><span class="keyword">, 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">mb_detect_encoding</span><span class="keyword">(</span><span class="default">$content</span><span class="keyword">, </span><span class="string">'UTF-8, ISO-8859-1'</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">));
+<br>}
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102575">  <div class="votes">
+    <div id="Vu102575">
+    <a href="http://php.net/manual/vote-note.php?id=102575&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102575">
+    <a href="http://php.net/manual/vote-note.php?id=102575&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102575" title="53% like this...">
+    17
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#102575" class="name">
+  <strong class="user"><em>Stas Trefilov, OpteamIS</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#102575"> ¶</a><div class="date" title="2011-02-22 07:30"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom102575">
+<div class="phpcode"><code><span class="html">
+here is another (maybe the easiest) way of doing POST http requests from php using its built-in capabilities. feel free to add the headers you need (notably the Host: header) to further customize the request.<br><br>note: this method does not allow file uploads. if you want to upload a file with your request you will need to modify the context parameters to provide multipart/form-data encoding (check out <a href="http://www.php.net/manual/en/context.http.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/context.http.php</a> ) and build the $data_url following the guidelines on <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2" rel="nofollow" target="_blank">http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2</a><br><br><span class="default">&lt;?php<br></span><span class="comment">/**<br>make an http POST request and return the response content and headers<br>@param string $url&nbsp; &nbsp; url of the requested script<br>@param array $data&nbsp; &nbsp; hash array of request variables<br>@return returns a hash array with response content and headers in the following form:<br>&nbsp; &nbsp; array ('content'=&gt;'&lt;html&gt;&lt;/html&gt;'<br>&nbsp; &nbsp; &nbsp; &nbsp; , 'headers'=&gt;array ('HTTP/1.1 200 OK', 'Connection: close', ...)<br>&nbsp; &nbsp; &nbsp; &nbsp; )<br>*/<br></span><span class="keyword">function </span><span class="default">http_post </span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">, </span><span class="default">$data</span><span class="keyword">)<br>{<br>&nbsp; &nbsp; </span><span class="default">$data_url </span><span class="keyword">= </span><span class="default">http_build_query </span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">$data_len </span><span class="keyword">= </span><span class="default">strlen </span><span class="keyword">(</span><span class="default">$data_url</span><span class="keyword">);<br><br>&nbsp; &nbsp; return array (</span><span class="string">'content'</span><span class="keyword">=&gt;</span><span class="default">file_get_contents </span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">, </span><span class="default">stream_context_create </span><span class="keyword">(array (</span><span class="string">'http'</span><span class="keyword">=&gt;array (</span><span class="string">'method'</span><span class="keyword">=&gt;</span><span class="string">'POST'<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">, </span><span class="string">'header'</span><span class="keyword">=&gt;</span><span class="string">"Connection: close\r\nContent-Length: </span><span class="default">$data_len</span><span class="string">\r\n"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">, </span><span class="string">'content'</span><span class="keyword">=&gt;</span><span class="default">$data_url<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">))))<br>&nbsp; &nbsp; &nbsp; &nbsp; , </span><span class="string">'headers'</span><span class="keyword">=&gt;</span><span class="default">$http_response_header<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">);<br>}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102769">  <div class="votes">
+    <div id="Vu102769">
+    <a href="http://php.net/manual/vote-note.php?id=102769&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102769">
+    <a href="http://php.net/manual/vote-note.php?id=102769&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102769" title="53% like this...">
+    14
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#102769" class="name">
+  <strong class="user"><em>eric at midkotasolutions dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#102769"> ¶</a><div class="date" title="2011-03-04 11:26"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom102769">
+<div class="phpcode"><code><span class="html">
+At least as of PHP 5.3, file_get_contents no longer uses memory mapping.<br><br>See comments on this bug report:<br><br><a href="http://bugs.php.net/bug.php?id=52802" rel="nofollow" target="_blank">http://bugs.php.net/bug.php?id=52802</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="79563">  <div class="votes">
+    <div id="Vu79563">
+    <a href="http://php.net/manual/vote-note.php?id=79563&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd79563">
+    <a href="http://php.net/manual/vote-note.php?id=79563&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V79563" title="53% like this...">
+    15
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#79563" class="name">
+  <strong class="user"><em>francois hill</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#79563"> ¶</a><div class="date" title="2007-12-03 08:56"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom79563">
+<div class="phpcode"><code><span class="html">
+Seems file looks for the file inside the current working (executing) directory before looking in the include path, even with the FILE_USE_INCLUDE_PATH flag specified.<br><br>Same behavior as include actually.<br><br>By the way I feel the doc is not entirely clear on the exact order of inclusion (see include). It seems to say the include_path is the first location to be searched, but I have come across at least one case where the directory containing the file including was actually the first to be searched.<br><br>Drat.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="104746">  <div class="votes">
+    <div id="Vu104746">
+    <a href="http://php.net/manual/vote-note.php?id=104746&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd104746">
+    <a href="http://php.net/manual/vote-note.php?id=104746&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V104746" title="51% like this...">
+    5
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#104746" class="name">
+  <strong class="user"><em>fibrefox at dynamicfiles dot de</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#104746"> ¶</a><div class="date" title="2011-07-05 05:45"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom104746">
+<div class="phpcode"><code><span class="html">
+If you want to insert tracking-scripts into your shopping-system, some scripts doesn't support intelligent detection of HTTPS, so i made a script i put on the server that rewrites 'http' to 'https' in the script, assuming everything has to be UTF-8 encoded (as a fallback it makes a redirect).
+<br>
+<br>It is important that the HTTPS-source DOES exist!
+<br>
+<br><span class="default">&lt;?php
+<br>
+<br></span><span class="keyword">function </span><span class="default">file_get_contents_utf8</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">$opts </span><span class="keyword">= array(
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'http' </span><span class="keyword">=&gt; array(
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'method'</span><span class="keyword">=&gt;</span><span class="string">"GET"</span><span class="keyword">,
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'header'</span><span class="keyword">=&gt;</span><span class="string">"Content-Type: text/html; charset=utf-8"
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">)
+<br>&nbsp; &nbsp; );
+<br>
+<br>&nbsp; &nbsp; </span><span class="default">$context </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(</span><span class="default">$opts</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= @</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">$fn</span><span class="keyword">,</span><span class="default">false</span><span class="keyword">,</span><span class="default">$context</span><span class="keyword">);
+<br>&nbsp; &nbsp; return </span><span class="default">$result</span><span class="keyword">;
+<br>}
+<br></span><span class="default">header</span><span class="keyword">(</span><span class="string">"Content-Type: text/html; charset=utf-8"</span><span class="keyword">);
+<br></span><span class="default">$tPath </span><span class="keyword">= </span><span class="string">"URL YOU WANT TO MODIFY"</span><span class="keyword">;
+<br></span><span class="default">$result </span><span class="keyword">= </span><span class="default">file_get_contents_utf8</span><span class="keyword">(</span><span class="string">"<a href="http:" rel="nofollow" target="_blank">http://</a>"</span><span class="keyword">.</span><span class="default">$tPath</span><span class="keyword">);
+<br>
+<br>if( </span><span class="default">$result </span><span class="keyword">== </span><span class="default">false</span><span class="keyword">){
+<br>&nbsp; &nbsp; </span><span class="default">header</span><span class="keyword">(</span><span class="string">"Location: <a href="https:" rel="nofollow" target="_blank">https://</a>"</span><span class="keyword">.</span><span class="default">$tPath</span><span class="keyword">); </span><span class="comment">// fallback
+<br>&nbsp; &nbsp; </span><span class="keyword">exit();
+<br>}
+<br>else{
+<br>&nbsp; &nbsp; echo </span><span class="default">mb_ereg_replace</span><span class="keyword">(</span><span class="string">"http"</span><span class="keyword">,</span><span class="string">"https"</span><span class="keyword">,</span><span class="default">$result</span><span class="keyword">);
+<br>}
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="101026">  <div class="votes">
+    <div id="Vu101026">
+    <a href="http://php.net/manual/vote-note.php?id=101026&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd101026">
+    <a href="http://php.net/manual/vote-note.php?id=101026&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V101026" title="51% like this...">
+    5
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#101026" class="name">
+  <strong class="user"><em>KrisWebDev</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#101026"> ¶</a><div class="date" title="2010-11-21 01:17"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom101026">
+<div class="phpcode"><code><span class="html">
+If your file_get_contents freezes during several seconds, here is maybe your answer:
+<br>
+<br>Beware that the default keepalive timeout of Apache 2.0 httpd is 15 seconds. This is true for HTTP/1.1 connections, which is not the default behavior of file_get_contents but you can force it, especially if you are trying to act as a web browser. I don't know if this is also the case for HTTP/1.0 connections.
+<br>
+<br>Forcing the server to close the connection would make you gain those 15 seconds in your script:
+<br>
+<br><span class="default">&lt;?php
+<br>$context </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(array(</span><span class="string">'http' </span><span class="keyword">=&gt; array(</span><span class="string">'header'</span><span class="keyword">=&gt;</span><span class="string">'Connection: close'</span><span class="keyword">)));
+<br></span><span class="default">$content </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://www.example.com/test.html" rel="nofollow" target="_blank">http://www.example.com/test.html</a>"</span><span class="keyword">);
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Another way of resolving slowness issues is to use cURL or fsockopen. Bear in mind that contrary to the behavior of web browsers, file_get_contents doesn't return the result when the web page is fully downloaded (i.e. HTTP payload length = value of the response HTTP "Content-Length" header) but when the TCP connection is closed.
+<br>I hope this behavior will change in future releases of PHP.
+<br>This has been experienced with PHP 5.3.3.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="76358">  <div class="votes">
+    <div id="Vu76358">
+    <a href="http://php.net/manual/vote-note.php?id=76358&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd76358">
+    <a href="http://php.net/manual/vote-note.php?id=76358&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V76358" title="51% like this...">
+    7
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#76358" class="name">
+  <strong class="user"><em>bearachute at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#76358"> ¶</a><div class="date" title="2007-07-11 02:38"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom76358">
+<div class="phpcode"><code><span class="html">
+If you're having problems with binary and hex data:<br><br>I had a problem when trying to read information from a ttf, which is primarily hex data. A binary-safe file read automatically replaces byte values with their corresponding ASCII characters, so I thought that I could use the binary string when I needed readable ASCII strings, and bin2hex() when I needed hex strings.<br><br>However, this became a problem when I tried to pass those ASCII strings into other functions (namely gd functions). var_dump showed that a 5-character string contained 10 characters, but they weren't visible. A binary-to-"normal" string conversion function didn't seem to exist and I didn't want to have to convert every single character in hex using chr().<br><br>I used unpack with "c*" as the format flag to see what was going on, and found that every other character was null data (ordinal 0). To solve it, I just did<br><br>str_replace(chr(0), "", $string);<br><br>which did the trick.<br><br>This took forever to figure out so I hope this helps people reading from hex data!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71556">  <div class="votes">
+    <div id="Vu71556">
+    <a href="http://php.net/manual/vote-note.php?id=71556&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71556">
+    <a href="http://php.net/manual/vote-note.php?id=71556&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71556" title="51% like this...">
+    7
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#71556" class="name">
+  <strong class="user"><em>siegfri3d at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#71556"> ¶</a><div class="date" title="2006-12-05 12:52"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom71556">
+<div class="phpcode"><code><span class="html">
+Use the previous example if you want to request the server for a special part of the content, IF and only if the server accepts the method.
+<br>If you want a simple example to ask the server for all the content, but only save a portion of it, do it this way:
+<br><span class="default">&lt;?php
+<br>$content</span><span class="keyword">=</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://www.google.com/" rel="nofollow" target="_blank">http://www.google.com</a>"</span><span class="keyword">,</span><span class="default">FALSE</span><span class="keyword">,</span><span class="default">NULL</span><span class="keyword">,</span><span class="default">0</span><span class="keyword">,</span><span class="default">20</span><span class="keyword">);
+<br>echo </span><span class="default">$content</span><span class="keyword">;
+<br></span><span class="default">?&gt;
+<br></span>
+<br>This will echo the 20 first bytes of the google.com source code.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="101263">  <div class="votes">
+    <div id="Vu101263">
+    <a href="http://php.net/manual/vote-note.php?id=101263&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd101263">
+    <a href="http://php.net/manual/vote-note.php?id=101263&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V101263" title="50% like this...">
+    4
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#101263" class="name">
+  <strong class="user"><em>slymak at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#101263"> ¶</a><div class="date" title="2010-12-06 03:07"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom101263">
+<div class="phpcode"><code><span class="html">
+If working file is bigger than 64kb and you getting deadlock. Your buffer is overflow. Here are two way how to avoid that.
+<br>1) use temporary file for descriptor
+<br><span class="default">&lt;?php
+<br>&nbsp; $descriptorspec </span><span class="keyword">= array(
+<br>&nbsp;&nbsp; </span><span class="default">0 </span><span class="keyword">=&gt; array(</span><span class="string">"file"</span><span class="keyword">, </span><span class="string">"/tmp/ens/a.ens"</span><span class="keyword">,</span><span class="string">"r"</span><span class="keyword">),&nbsp; </span><span class="comment">// stdin is a pipe that the child will read from
+<br>&nbsp;&nbsp; </span><span class="default">1 </span><span class="keyword">=&gt; array(</span><span class="string">"file"</span><span class="keyword">, </span><span class="string">"/tmp/ens/a.html"</span><span class="keyword">,</span><span class="string">"w"</span><span class="keyword">),&nbsp; </span><span class="comment">// stdout is a pipe that the child will write to
+<br>&nbsp;&nbsp; </span><span class="default">2 </span><span class="keyword">=&gt; array(</span><span class="string">"file"</span><span class="keyword">, </span><span class="string">"/tmp/ens/error-output.txt"</span><span class="keyword">, </span><span class="string">"a"</span><span class="keyword">) </span><span class="comment">// stderr is a file to write to
+<br>&nbsp; </span><span class="keyword">);
+<br></span><span class="default">?&gt;
+<br></span>
+<br>2) inline read using stream_set_blocking. PHP doesn't proper handle last part of file.
+<br><span class="default">&lt;?php
+<br>&nbsp; $READ_LEN </span><span class="keyword">= </span><span class="default">64</span><span class="keyword">*</span><span class="default">1024</span><span class="keyword">;
+<br>&nbsp; </span><span class="default">$MAX_BUF_LEN </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">*</span><span class="default">$READ_LEN</span><span class="keyword">;
+<br>
+<br>&nbsp; </span><span class="default">$url </span><span class="keyword">= </span><span class="string">"<a href="http://some.domain.com:5984/" rel="nofollow" target="_blank">http://some.domain.com:5984/</a>"</span><span class="keyword">.</span><span class="default">$db</span><span class="keyword">.</span><span class="string">"/"</span><span class="keyword">.</span><span class="default">$member</span><span class="keyword">.</span><span class="string">"/contents"</span><span class="keyword">;
+<br>&nbsp; </span><span class="default">$src </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">,</span><span class="string">"r"</span><span class="keyword">);
+<br>
+<br>&nbsp; </span><span class="default">$cwd </span><span class="keyword">= </span><span class="string">'/tmp'</span><span class="keyword">;
+<br>&nbsp; </span><span class="default">$cmd</span><span class="keyword">[</span><span class="string">'enscript'</span><span class="keyword">] = </span><span class="string">"/usr/bin/enscript"</span><span class="keyword">;
+<br>&nbsp; </span><span class="default">$cmd</span><span class="keyword">[</span><span class="string">'enscript-options'</span><span class="keyword">] = </span><span class="string">" -q --language=html --color -Ejcl -o -"</span><span class="keyword">;
+<br>&nbsp; </span><span class="default">$descriptorspec </span><span class="keyword">= array(
+<br>&nbsp; &nbsp; </span><span class="default">0 </span><span class="keyword">=&gt; array(</span><span class="string">"pipe"</span><span class="keyword">, </span><span class="string">"r"</span><span class="keyword">),&nbsp; </span><span class="comment">// stdin is a pipe that the child will read from
+<br>&nbsp; &nbsp; </span><span class="default">1 </span><span class="keyword">=&gt; array(</span><span class="string">"pipe"</span><span class="keyword">, </span><span class="string">"w"</span><span class="keyword">)&nbsp;&nbsp; </span><span class="comment">// stdout is a pipe that the child will write to
+<br>&nbsp; </span><span class="keyword">);
+<br>
+<br>&nbsp; </span><span class="default">$ph</span><span class="keyword">=</span><span class="default">proc_open</span><span class="keyword">(</span><span class="default">$cmd</span><span class="keyword">[</span><span class="string">'enscript'</span><span class="keyword">].</span><span class="string">" "</span><span class="keyword">.</span><span class="default">$cmd</span><span class="keyword">[</span><span class="string">'enscript-options'</span><span class="keyword">],</span><span class="default">$descriptorspec</span><span class="keyword">,</span><span class="default">$pipes</span><span class="keyword">,</span><span class="default">$cwd</span><span class="keyword">);
+<br>
+<br>&nbsp; </span><span class="default">stream_set_blocking</span><span class="keyword">(</span><span class="default">$src</span><span class="keyword">,</span><span class="default">0</span><span class="keyword">);
+<br>&nbsp; </span><span class="default">stream_set_blocking</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">0</span><span class="keyword">);
+<br>&nbsp; </span><span class="default">stream_set_blocking</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">],</span><span class="default">0</span><span class="keyword">);
+<br>
+<br>&nbsp; </span><span class="default">$CMD_OUT_OPEN </span><span class="keyword">= </span><span class="default">TRUE</span><span class="keyword">; </span><span class="default">$k </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;
+<br>&nbsp; while (!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]) || !</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$src</span><span class="keyword">) || </span><span class="default">$k </span><span class="keyword">&gt; </span><span class="default">0</span><span class="keyword">) {
+<br>&nbsp; &nbsp; if (!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$src</span><span class="keyword">) &amp;&amp; </span><span class="default">$k</span><span class="keyword">+</span><span class="default">$READ_LEN </span><span class="keyword">&lt;= </span><span class="default">$MAX_BUF_LEN</span><span class="keyword">) {
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$input </span><span class="keyword">.= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$src</span><span class="keyword">,</span><span class="default">$READ_LEN</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$k </span><span class="keyword">= </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$input</span><span class="keyword">);
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; if (</span><span class="default">$k </span><span class="keyword">&gt; </span><span class="default">0</span><span class="keyword">) {
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$l </span><span class="keyword">= </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$input</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$k </span><span class="keyword">-= </span><span class="default">$l</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$input </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$input</span><span class="keyword">,</span><span class="default">$l</span><span class="keyword">);
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; if (</span><span class="default">$CMD_OUT_OPEN </span><span class="keyword">&amp;&amp; </span><span class="default">$k </span><span class="keyword">== </span><span class="default">0 </span><span class="keyword">&amp;&amp; </span><span class="default">feof</span><span class="keyword">(</span><span class="default">$src</span><span class="keyword">)) {
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);
+<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$CMD_OUT_OPEN </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">;
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; </span><span class="default">$output </span><span class="keyword">= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">],</span><span class="default">$READ_LEN</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="default">$outputn </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"&lt;H1&gt;(stdin)&lt;/H1&gt;"</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="default">$output</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$outputn</span><span class="keyword">;
+<br>&nbsp; }
+<br>
+<br>&nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$pipes</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]);
+<br>
+<br>&nbsp; </span><span class="default">$return_value </span><span class="keyword">= </span><span class="default">proc_close</span><span class="keyword">(</span><span class="default">$ph</span><span class="keyword">);
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="108975">  <div class="votes">
+    <div id="Vu108975">
+    <a href="http://php.net/manual/vote-note.php?id=108975&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108975">
+    <a href="http://php.net/manual/vote-note.php?id=108975&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108975" title="50% like this...">
+    3
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#108975" class="name">
+  <strong class="user"><em>werdnanoslen at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#108975"> ¶</a><div class="date" title="2012-06-08 06:16"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom108975">
+<div class="phpcode"><code><span class="html">
+This is an easy way to trigger scripts by listening for POSTs. I simply point a service's webhook url to the script, which file_get_contents("php://input"), cast to an array, and then simplexml_load_string() to parse it and use one of the keys' data as the parameter for my script.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102319">  <div class="votes">
+    <div id="Vu102319">
+    <a href="http://php.net/manual/vote-note.php?id=102319&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102319">
+    <a href="http://php.net/manual/vote-note.php?id=102319&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102319" title="50% like this...">
+    2
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#102319" class="name">
+  <strong class="user"><em>Yoga Wibowo Aji</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#102319"> ¶</a><div class="date" title="2011-02-08 09:10"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom102319">
+<div class="phpcode"><code><span class="html">
+read text per line and convert to array<br><br>for example, the input file is input.txt<br>the input file containt text below<br><br>one<br>two<br>three<br>four<br>five<br><br>++++++++++++++++++++++++++<br><br>read value per line<br><br><span class="default">&lt;?php<br>$data </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"input.txt"</span><span class="keyword">); </span><span class="comment">//read the file<br></span><span class="default">$convert </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="string">"\n"</span><span class="keyword">, </span><span class="default">$data</span><span class="keyword">); </span><span class="comment">//create array separate by new line<br><br></span><span class="keyword">for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">count</span><span class="keyword">(</span><span class="default">$convert</span><span class="keyword">);</span><span class="default">$i</span><span class="keyword">++)&nbsp; <br>{<br>&nbsp; &nbsp; echo </span><span class="default">$convert</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">].</span><span class="string">', '</span><span class="keyword">; </span><span class="comment">//write value by index<br></span><span class="keyword">}<br></span><span class="default">?&gt;<br></span><br>++++++++++++++++++++++++++<br><br>Output :<br><br>one, two, three, four, five,</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109906">  <div class="votes">
+    <div id="Vu109906">
+    <a href="http://php.net/manual/vote-note.php?id=109906&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109906">
+    <a href="http://php.net/manual/vote-note.php?id=109906&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109906" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#109906" class="name">
+  <strong class="user"><em>andrew at 21cv dot co dot uk</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#109906"> ¶</a><div class="date" title="2012-09-02 10:47"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom109906">
+<div class="phpcode"><code><span class="html">
+Negative offsets don't work as you might expect (like in <a href="http://php.net/substr" rel="nofollow" target="_blank">http://php.net/substr</a> for example)<br><br>So<br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">__FILE__</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">, </span><span class="default">null</span><span class="keyword">, -</span><span class="default">10</span><span class="keyword">) </span><span class="default">?&gt;<br></span>does the same as<br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">__FILE__</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">, </span><span class="default">null</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">) </span><span class="default">?&gt;<br></span><br>To get the last 10 characters of a file, you need to use<br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">file_get_contents </span><span class="keyword">(</span><span class="default">__FILE__</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">, </span><span class="default">null</span><span class="keyword">, (</span><span class="default">filesize </span><span class="keyword">(</span><span class="default">__FILE__</span><span class="keyword">) - </span><span class="default">10</span><span class="keyword">)) </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="74551">  <div class="votes">
+    <div id="Vu74551">
+    <a href="http://php.net/manual/vote-note.php?id=74551&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd74551">
+    <a href="http://php.net/manual/vote-note.php?id=74551&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V74551" title="50% like this...">
+    3
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#74551" class="name">
+  <strong class="user"><em>Greg Ambrose (greg at catalina-it dot com dot au)</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#74551"> ¶</a><div class="date" title="2007-04-16 09:37"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom74551">
+<div class="phpcode"><code><span class="html">
+[Editors note: As of PHP 5.2.1 you can specify `timeout` context option and pass the context to file_get_contents()]
+<br>
+<br>The only way I could get get_file_contents() to wait for a very slow http request was to set the socket timeout as follows.
+<br>
+<br> ini_set('default_socket_timeout',&nbsp; &nbsp; 120);&nbsp; &nbsp; 
+<br>$a = file_get_contents("<a href="http://abcxyz.com/" rel="nofollow" target="_blank">http://abcxyz.com</a>");
+<br>
+<br>Other times like execution time and input time had no effect.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106108">  <div class="votes">
+    <div id="Vu106108">
+    <a href="http://php.net/manual/vote-note.php?id=106108&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106108">
+    <a href="http://php.net/manual/vote-note.php?id=106108&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106108" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#106108" class="name">
+  <strong class="user"><em>godwraith01 at yahoo dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#106108"> ¶</a><div class="date" title="2011-10-11 04:16"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom106108">
+<div class="phpcode"><code><span class="html">
+I experienced a problem in using hostnames instead straight IP with some server destinations.<br><br>If i use file_get_contents("www.jbossServer.example/app1",...)<br>i will get an 'Invalid hostname' from the server i'm calling.<br><br>This is because file_get_contents probably will rewrite your request after getting the IP, obtaining the same thing as :<br>file_get_contents("xxx.yyy.www.zzz/app1",...)<br><br>And you know that many servers will deny you access if you go through IP addressing in the request.<br><br>With cURL this problem doesn't exists. It resolves the hostname leaving the request as you set it, so the server is not rude in response.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114055">  <div class="votes">
+    <div id="Vu114055">
+    <a href="http://php.net/manual/vote-note.php?id=114055&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114055">
+    <a href="http://php.net/manual/vote-note.php?id=114055&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114055" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#114055" class="name">
+  <strong class="user"><em>forestrf at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#114055"> ¶</a><div class="date" title="2014-01-07 03:31"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom114055" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+It is important to write the method in capital letters like "GET" or "POST" and not "get" or "post". Some servers can respond a 400 error if you do not use caps in the method.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="80435">  <div class="votes">
+    <div id="Vu80435">
+    <a href="http://php.net/manual/vote-note.php?id=80435&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd80435">
+    <a href="http://php.net/manual/vote-note.php?id=80435&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V80435" title="49% like this...">
+    -3
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#80435" class="name">
+  <strong class="user"><em>php [spat] hm2k.org</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#80435"> ¶</a><div class="date" title="2008-01-15 03:58"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom80435" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+I decided to make a similar function to this, called file_post_contents, it uses POST instead of GET to call, kinda handy...<br><br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">file_post_contents</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">,</span><span class="default">$headers</span><span class="keyword">=</span><span class="default">false</span><span class="keyword">) {<br>&nbsp; &nbsp; </span><span class="default">$url </span><span class="keyword">= </span><span class="default">parse_url</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">);<br><br>&nbsp; &nbsp; if (!isset(</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'port'</span><span class="keyword">])) {<br>&nbsp; &nbsp; &nbsp; if (</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'scheme'</span><span class="keyword">] == </span><span class="string">'http'</span><span class="keyword">) { </span><span class="default">$url</span><span class="keyword">[</span><span class="string">'port'</span><span class="keyword">]=</span><span class="default">80</span><span class="keyword">; }<br>&nbsp; &nbsp; &nbsp; elseif (</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'scheme'</span><span class="keyword">] == </span><span class="string">'https'</span><span class="keyword">) { </span><span class="default">$url</span><span class="keyword">[</span><span class="string">'port'</span><span class="keyword">]=</span><span class="default">443</span><span class="keyword">; }<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; </span><span class="default">$url</span><span class="keyword">[</span><span class="string">'query'</span><span class="keyword">]=isset(</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'query'</span><span class="keyword">])?</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'query'</span><span class="keyword">]:</span><span class="string">''</span><span class="keyword">;<br><br>&nbsp; &nbsp; </span><span class="default">$url</span><span class="keyword">[</span><span class="string">'protocol'</span><span class="keyword">]=</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'scheme'</span><span class="keyword">].</span><span class="string">'://'</span><span class="keyword">;<br>&nbsp; &nbsp; </span><span class="default">$eol</span><span class="keyword">=</span><span class="string">"\r\n"</span><span class="keyword">;<br><br>&nbsp; &nbsp; </span><span class="default">$headers </span><span class="keyword">=&nbsp; </span><span class="string">"POST "</span><span class="keyword">.</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'protocol'</span><span class="keyword">].</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'host'</span><span class="keyword">].</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'path'</span><span class="keyword">].</span><span class="string">" HTTP/1.0"</span><span class="keyword">.</span><span class="default">$eol</span><span class="keyword">. <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"Host: "</span><span class="keyword">.</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'host'</span><span class="keyword">].</span><span class="default">$eol</span><span class="keyword">. <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"Referer: "</span><span class="keyword">.</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'protocol'</span><span class="keyword">].</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'host'</span><span class="keyword">].</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'path'</span><span class="keyword">].</span><span class="default">$eol</span><span class="keyword">. <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"Content-Type: application/x-www-form-urlencoded"</span><span class="keyword">.</span><span class="default">$eol</span><span class="keyword">. <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"Content-Length: "</span><span class="keyword">.</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'query'</span><span class="keyword">]).</span><span class="default">$eol</span><span class="keyword">.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$eol</span><span class="keyword">.</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'query'</span><span class="keyword">];<br>&nbsp; &nbsp; </span><span class="default">$fp </span><span class="keyword">= </span><span class="default">fsockopen</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">[</span><span class="string">'host'</span><span class="keyword">], </span><span class="default">$url</span><span class="keyword">[</span><span class="string">'port'</span><span class="keyword">], </span><span class="default">$errno</span><span class="keyword">, </span><span class="default">$errstr</span><span class="keyword">, </span><span class="default">30</span><span class="keyword">); <br>&nbsp; &nbsp; if(</span><span class="default">$fp</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; </span><span class="default">fputs</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">, </span><span class="default">$headers</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; while(!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">)) { </span><span class="default">$result </span><span class="keyword">.= </span><span class="default">fgets</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">, </span><span class="default">128</span><span class="keyword">); }<br>&nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fp</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; if (!</span><span class="default">$headers</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//removes headers<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pattern</span><span class="keyword">=</span><span class="string">"/^.*\r\n\r\n/s"</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result</span><span class="keyword">=</span><span class="default">preg_replace</span><span class="keyword">(</span><span class="default">$pattern</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$result</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; return </span><span class="default">$result</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="101239">  <div class="votes">
+    <div id="Vu101239">
+    <a href="http://php.net/manual/vote-note.php?id=101239&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd101239">
+    <a href="http://php.net/manual/vote-note.php?id=101239&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V101239" title="48% like this...">
+    -6
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#101239" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#101239"> ¶</a><div class="date" title="2010-12-04 07:33"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom101239" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+The offset is 0 based.&nbsp; Setting it to 1 will skip the first character of the stream.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="58758">  <div class="votes">
+    <div id="Vu58758">
+    <a href="http://php.net/manual/vote-note.php?id=58758&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd58758">
+    <a href="http://php.net/manual/vote-note.php?id=58758&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V58758" title="49% like this...">
+    -3
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#58758" class="name">
+  <strong class="user"><em>richard dot quadling at bandvulc dot co dot uk</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#58758"> ¶</a><div class="date" title="2005-11-15 02:47"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom58758" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+If, like me, you are on a Microsoft network with ISA server and require NTLM authentication, certain applications will not get out of the network. SETI@Home Classic and PHP are just 2 of them.<br><br>The workaround is fairly simple.<br><br>First you need to use an NTLM Authentication Proxy Server. There is one written in Python and is available from <a href="http://apserver.sourceforge.net/" rel="nofollow" target="_blank">http://apserver.sourceforge.net/.</a> You will need Python from <a href="http://www.python.org/" rel="nofollow" target="_blank">http://www.python.org/.</a><br><br>Both sites include excellent documentation.<br><br>Python works a bit like PHP. Human readable code is handled without having to produce a compiled version. You DO have the opportunity of compiling the code (from a .py file to a .pyc file).<br><br>Once compiled, I installed this as a service (instsrv and srvany - parts of the Windows Resource Kit), so when the server is turned on (not logged in), the Python based NTLM Authentication Proxy Server is running.<br><br>Then, and here is the bit I'm really interested in, you need to tell PHP you intend to route http/ftp requests through the NTLM APS.<br><br>To do this, you use contexts.<br><br>Here is an example.<br><br><span class="default">&lt;?php<br><br></span><span class="comment">// Define a context for HTTP.<br></span><span class="default">$aContext </span><span class="keyword">= array(<br>&nbsp; &nbsp; </span><span class="string">'http' </span><span class="keyword">=&gt; array(<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'proxy' </span><span class="keyword">=&gt; </span><span class="string">'tcp://127.0.0.1:8080'</span><span class="keyword">, </span><span class="comment">// This needs to be the server and the port of the NTLM Authentication Proxy Server.<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'request_fulluri' </span><span class="keyword">=&gt; </span><span class="default">True</span><span class="keyword">,<br>&nbsp; &nbsp; &nbsp; &nbsp; ),<br>&nbsp; &nbsp; );<br></span><span class="default">$cxContext </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(</span><span class="default">$aContext</span><span class="keyword">);<br><br></span><span class="comment">// Now all file stream functions can use this context.<br><br></span><span class="default">$sFile </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://www.php.net/" rel="nofollow" target="_blank">http://www.php.net</a>"</span><span class="keyword">, </span><span class="default">False</span><span class="keyword">, </span><span class="default">$cxContext</span><span class="keyword">);<br><br>echo </span><span class="default">$sFile</span><span class="keyword">;<br></span><span class="default">?&gt;<br></span><br>Hopefully this helps SOMEONE!!!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="82255">  <div class="votes">
+    <div id="Vu82255">
+    <a href="http://php.net/manual/vote-note.php?id=82255&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd82255">
+    <a href="http://php.net/manual/vote-note.php?id=82255&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V82255" title="48% like this...">
+    -6
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#82255" class="name">
+  <strong class="user"><em>3n1gm4 [at] gmail [dot] com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#82255"> ¶</a><div class="date" title="2008-04-02 01:12"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom82255" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+This is a nice and simple substitute to get_file_contents() using curl, it returns FALSE if $contents is empty.<br><br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">curl_get_file_contents</span><span class="keyword">(</span><span class="default">$URL</span><span class="keyword">)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$c </span><span class="keyword">= </span><span class="default">curl_init</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">curl_setopt</span><span class="keyword">(</span><span class="default">$c</span><span class="keyword">, </span><span class="default">CURLOPT_RETURNTRANSFER</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">curl_setopt</span><span class="keyword">(</span><span class="default">$c</span><span class="keyword">, </span><span class="default">CURLOPT_URL</span><span class="keyword">, </span><span class="default">$URL</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$contents </span><span class="keyword">= </span><span class="default">curl_exec</span><span class="keyword">(</span><span class="default">$c</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">curl_close</span><span class="keyword">(</span><span class="default">$c</span><span class="keyword">);<br><br>&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$contents</span><span class="keyword">) return </span><span class="default">$contents</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else return </span><span class="default">FALSE</span><span class="keyword">;<br>&nbsp; &nbsp; }<br></span><span class="default">?&gt;<br></span><br>Hope this help, if there is something wrong or something you don't understand let me know :)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="49520">  <div class="votes">
+    <div id="Vu49520">
+    <a href="http://php.net/manual/vote-note.php?id=49520&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd49520">
+    <a href="http://php.net/manual/vote-note.php?id=49520&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V49520" title="48% like this...">
+    -5
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#49520" class="name">
+  <strong class="user"><em>aidan at php dot net</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#49520"> ¶</a><div class="date" title="2005-01-30 11:23"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom49520" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+This functionality is now implemented in the PEAR package PHP_Compat.<br><br>More information about using this function without upgrading your version of PHP can be found on the below link:<br><br><a href="http://pear.php.net/package/PHP_Compat" rel="nofollow" target="_blank">http://pear.php.net/package/PHP_Compat</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="94303">  <div class="votes">
+    <div id="Vu94303">
+    <a href="http://php.net/manual/vote-note.php?id=94303&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd94303">
+    <a href="http://php.net/manual/vote-note.php?id=94303&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V94303" title="48% like this...">
+    -8
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#94303" class="name">
+  <strong class="user"><em>ken at wetken dot net</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#94303"> ¶</a><div class="date" title="2009-10-28 05:00"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom94303" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+On Centos 5, and maybe other Red Hat based systems, any attempt to use file_get_contents to access a URL on an http&nbsp; port other than 80 (e.g. "<a href="http://www.example.com:8040/page" rel="nofollow" target="_blank">http://www.example.com:8040/page</a>") may fail with a permissions violation (error 13) unless the box you are running php on has its seLinux set to 'permissive' not 'enforcing' . Otherwise the request doesn't even get out of the box, i.e. the permissions violation is generated locally by seLinux.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106969">  <div class="votes">
+    <div id="Vu106969">
+    <a href="http://php.net/manual/vote-note.php?id=106969&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106969">
+    <a href="http://php.net/manual/vote-note.php?id=106969&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106969" title="47% like this...">
+    -11
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#106969" class="name">
+  <strong class="user"><em>pperegrina</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#106969"> ¶</a><div class="date" title="2011-12-21 11:30"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom106969" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+For those having this problem when trying to get_file_contents(url):<br><br>Warning: file_get_contents(url): failed to open stream: HTTP request failed!&nbsp; in xx on line yy<br><br>If you are behind a SonicWall firewall, read this:<br><a href="https://bugs.php.net/bug.php?id=40197" rel="nofollow" target="_blank">https://bugs.php.net/bug.php?id=40197</a><br>(this little line: uncheck a box in the internal settings of the firewall labled "Enforce Host Tag Search with for CFS")<br><br>Apparently by default SonicWall blocks any HTTP request without a "Host:" header, which is the case in the PHP get_file_contents(url) implementation.<br><br>This is why, if you try to get the same URL from the same machine with cURL our wget, it works.<br><br>I hope this will be useful to someone, it took me hours to find out :)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="97009">  <div class="votes">
+    <div id="Vu97009">
+    <a href="http://php.net/manual/vote-note.php?id=97009&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd97009">
+    <a href="http://php.net/manual/vote-note.php?id=97009&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V97009" title="47% like this...">
+    -10
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#97009" class="name">
+  <strong class="user"><em>vlad dot wing at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#97009"> ¶</a><div class="date" title="2010-03-27 02:03"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom97009" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+If you want to check if the function returned error, in case of a HTTP request an, it's not sufficient to test it against false. It may happen the return for that HTTP request was empty. In this case it's better to check if the return value is a bool.
+<br>
+<br><span class="default">&lt;?php
+<br>$result</span><span class="keyword">=</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://www.example.com/" rel="nofollow" target="_blank">http://www.example.com</a>"</span><span class="keyword">);
+<br>if (</span><span class="default">$result </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">)
+<br>{
+<br>&nbsp; &nbsp; </span><span class="comment">// treat error
+<br></span><span class="keyword">} else {
+<br>&nbsp; &nbsp; </span><span class="comment">// handle good case
+<br></span><span class="keyword">}
+<br></span><span class="default">?&gt;
+<br></span>
+<br>[EDIT BY thiago: Has enhacements from an anonymous user]</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="95665">  <div class="votes">
+    <div id="Vu95665">
+    <a href="http://php.net/manual/vote-note.php?id=95665&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd95665">
+    <a href="http://php.net/manual/vote-note.php?id=95665&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V95665" title="47% like this...">
+    -11
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#95665" class="name">
+  <strong class="user"><em>rutger at webjin dot nl</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#95665"> ¶</a><div class="date" title="2010-01-14 06:22"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom95665" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Sometimes you might get an error opening an http URL.<br>even though you have set "allow_url_fopen = On" in php.ini<br><br>For me the the solution was to also set "user_agent" to something.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="108431">  <div class="votes">
+    <div id="Vu108431">
+    <a href="http://php.net/manual/vote-note.php?id=108431&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108431">
+    <a href="http://php.net/manual/vote-note.php?id=108431&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108431" title="47% like this...">
+    -14
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#108431" class="name">
+  <strong class="user"><em>dustin at dumontproject dot com-spam sux</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#108431"> ¶</a><div class="date" title="2012-04-25 09:25"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom108431" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+For those who use file_get_contents for JSON or other RESTful services - like my architecture did for a big site - this will probably help a lot.<br><br>We struggled with having the site using get urls that would go through our load balancer instead of hitting the local server.<br><br>What we did was load this function through a local url and set the Host: header for our virtualhost entries on the site we wanted to laod.<br><br>This code solved our issue:<br><span class="default">&lt;?php<br><br></span><span class="comment">//set the header context stream for virtualhost lookup<br></span><span class="default">$context </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(array(</span><span class="string">'http' </span><span class="keyword">=&gt; array(</span><span class="string">'header' </span><span class="keyword">=&gt; </span><span class="string">'Host: www.VIRTUALHOSTDOMAIN.com'</span><span class="keyword">)));<br><br></span><span class="comment">//use a localhost url or alternatively 127.0.0.1 ip<br></span><span class="default">$url </span><span class="keyword">= </span><span class="string">'<a href="http://localhost/rest-service/?get-user&amp;id=######" rel="nofollow" target="_blank">http://localhost/rest-service/?get-user&amp;id=######</a>'</span><span class="keyword">;<br><br></span><span class="comment">//fetch the data through webserver using the Host http header we set<br></span><span class="default">$data </span><span class="keyword">= </span><span class="default">json_decode</span><span class="keyword">(</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$context</span><span class="keyword">));<br><br></span><span class="comment">//verify you have your data<br></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">);<br><br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="68636">  <div class="votes">
+    <div id="Vu68636">
+    <a href="http://php.net/manual/vote-note.php?id=68636&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd68636">
+    <a href="http://php.net/manual/vote-note.php?id=68636&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V68636" title="47% like this...">
+    -12
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#68636" class="name">
+  <strong class="user"><em>fcicqbbs at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#68636"> ¶</a><div class="date" title="2006-08-04 01:55"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom68636" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+the bug #36857 was fixed.<br><a href="http://bugs.php.net/36857" rel="nofollow" target="_blank">http://bugs.php.net/36857</a><br><br>Now you may use this code,to fetch the partial content like this:<br><span class="default">&lt;?php<br>$context</span><span class="keyword">=array(</span><span class="string">'http' </span><span class="keyword">=&gt; array (</span><span class="string">'header'</span><span class="keyword">=&gt; </span><span class="string">'Range: bytes=1024-'</span><span class="keyword">, ),);<br></span><span class="default">$xcontext </span><span class="keyword">= </span><span class="default">stream_context_create</span><span class="keyword">(</span><span class="default">$context</span><span class="keyword">);<br></span><span class="default">$str</span><span class="keyword">=</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"<a href="http://www.fcicq.net/wp/" rel="nofollow" target="_blank">http://www.fcicq.net/wp/</a>"</span><span class="keyword">,</span><span class="default">FALSE</span><span class="keyword">,</span><span class="default">$xcontext</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span>that's all.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="101639">  <div class="votes">
+    <div id="Vu101639">
+    <a href="http://php.net/manual/vote-note.php?id=101639&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd101639">
+    <a href="http://php.net/manual/vote-note.php?id=101639&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V101639" title="46% like this...">
+    -15
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#101639" class="name">
+  <strong class="user"><em>contact at webapp dot fr</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#101639"> ¶</a><div class="date" title="2010-12-31 03:57"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom101639" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+When using a URI with a login / password (HTTP or FTP, for an example), you may need to urlencode the password if it contains special characters.<br>Do not urlencode the whole URI, just the password.<br><br>Don't do :<br>urlencode('<a href="ftp://login:mdp%/?special@host/dir/file" rel="nofollow" target="_blank">ftp://login:mdp%?special@host/dir/file</a>')<br><br>Do :<br>'<a href="ftp://login/" rel="nofollow" target="_blank">ftp://login:</a>' . urlencode('mdp%?special') . '@host/dir/file';<br><br>Might seem obvious, but is worth noting.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114436">  <div class="votes">
+    <div id="Vu114436">
+    <a href="http://php.net/manual/vote-note.php?id=114436&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114436">
+    <a href="http://php.net/manual/vote-note.php?id=114436&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114436" title="41% like this...">
+    -6
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#114436" class="name">
+  <strong class="user"><em>luby dot pl at gmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#114436"> ¶</a><div class="date" title="2014-02-20 02:29"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom114436" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+The funniest thing there is that seeking on non local files may, or may not work. This is unpredictable, and thus should throw rather than doing some magical stuff.<br>Also trying to read non local file which doesn't exists results in FALSE returned and no single warning emitted.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="84956">  <div class="votes">
+    <div id="Vu84956">
+    <a href="http://php.net/manual/vote-note.php?id=84956&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd84956">
+    <a href="http://php.net/manual/vote-note.php?id=84956&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V84956" title="46% like this...">
+    -19
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#84956" class="name">
+  <strong class="user"><em>EOD</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#84956"> ¶</a><div class="date" title="2008-08-07 05:34"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom84956" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+if $filename has a relative path file_get_contents returns the uninterpreted sourcecode of the php-file with all comments etc.<br><br>I don't know whether this is a bug or intented or caused by server-configuration.<br><br>I think this behaviour should be included in the description of the function.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116249">  <div class="votes">
+    <div id="Vu116249">
+    <a href="http://php.net/manual/vote-note.php?id=116249&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116249">
+    <a href="http://php.net/manual/vote-note.php?id=116249&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116249" title="39% like this...">
+    -9
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#116249" class="name">
+  <strong class="user"><em>rickywap at ymail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#116249"> ¶</a><div class="date" title="2014-12-01 11:18"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom116249" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+how to get content one images in page, example: post message user fb</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="91414">  <div class="votes">
+    <div id="Vu91414">
+    <a href="http://php.net/manual/vote-note.php?id=91414&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd91414">
+    <a href="http://php.net/manual/vote-note.php?id=91414&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V91414" title="44% like this...">
+    -23
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#91414" class="name">
+  <strong class="user"><em>corey at effim dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#91414"> ¶</a><div class="date" title="2009-06-09 02:35"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom91414" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+In my dev environment with a relatively low-speed drive (standard SATA 7200RPM) reading a 25MB zip file in 10 times...
+<br>
+<br><span class="default">&lt;?php
+<br>
+<br>$data </span><span class="keyword">= `</span><span class="string">cat /tmp/test.zip</span><span class="keyword">`;
+<br></span><span class="comment">// 1.05 seconds
+<br>
+<br></span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'/tmp/test.zip'</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);
+<br></span><span class="default">$data </span><span class="keyword">= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">filesize</span><span class="keyword">(</span><span class="string">'/tmp/test.zip'</span><span class="keyword">));
+<br></span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">);
+<br></span><span class="comment">// 1.31 seconds
+<br>
+<br></span><span class="default">$data </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">'/tmp/test.zip'</span><span class="keyword">);
+<br></span><span class="comment">// 1.33 seconds
+<br>
+<br></span><span class="default">?&gt;
+<br></span>
+<br>However, on a 21k text file running 100 iterations...
+<br>
+<br><span class="default">&lt;?php
+<br>
+<br>$data </span><span class="keyword">= `</span><span class="string">cat /tmp/test.txt</span><span class="keyword">`;
+<br></span><span class="comment">// 1.98 seconds
+<br>
+<br></span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'/tmp/test.txt'</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);
+<br></span><span class="default">$data </span><span class="keyword">= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">filesize</span><span class="keyword">(</span><span class="string">'/tmp/test.txt'</span><span class="keyword">));
+<br></span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">);
+<br></span><span class="comment">// 0.00082 seconds
+<br>
+<br></span><span class="default">$data </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">'/tmp/test.txt'</span><span class="keyword">);
+<br></span><span class="comment">// 0.0069 seconds
+<br>
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Despite the comment about file_get_contents being faster do to memory mapping, file_get_contents is slowest in both of the above examples. If you need the best performance out of your production box, you might want to throw together a script to check out which method is fastest for what size files on that particular machine, then optimize your code to check the file size and use the appropriate function for it.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116250">  <div class="votes">
+    <div id="Vu116250">
+    <a href="http://php.net/manual/vote-note.php?id=116250&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116250">
+    <a href="http://php.net/manual/vote-note.php?id=116250&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116250" title="33% like this...">
+    -7
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#116250" class="name">
+  <strong class="user"><em>rickywap at ymail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#116250"> ¶</a><div class="date" title="2014-12-01 11:22"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom116250" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+how to get content one images in page a name site, example: post message user fb</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115364">  <div class="votes">
+    <div id="Vu115364">
+    <a href="http://php.net/manual/vote-note.php?id=115364&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115364">
+    <a href="http://php.net/manual/vote-note.php?id=115364&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115364" title="34% like this...">
+    -11
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#115364" class="name">
+  <strong class="user"><em>srgold at hotmail dot com</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#115364"> ¶</a><div class="date" title="2014-07-12 09:36"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom115364" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Be sure to remove newlines from variables when using file_get_contents, or you'll receive the following error:<br><br>file_get_contents(): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="110297">  <div class="votes">
+    <div id="Vu110297">
+    <a href="http://php.net/manual/vote-note.php?id=110297&amp;page=function.file-get-contents&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd110297">
+    <a href="http://php.net/manual/vote-note.php?id=110297&amp;page=function.file-get-contents&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V110297" title="41% like this...">
+    -48
+    </div>
+  </div>
+  <a href="http://php.net/manual/es/function.file-get-contents.php#110297" class="name">
+  <strong class="user"><em>leomac at inbox dot ru</em></strong></a><a class="genanchor" href="http://php.net/manual/es/function.file-get-contents.php#110297"> ¶</a><div class="date" title="2012-10-09 09:29"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom110297" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Reading all script input is simple task with file_get_contents, but it depends on what SAPI is being used.<br><br>Only in Apache, not in CLI:<br><span class="default">&lt;?php<br>&nbsp; $input </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"php://input"</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>Only in CLI, not in Apache:<br><span class="default">&lt;?php<br>&nbsp; $input </span><span class="keyword">= </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"php://stdin"</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>In Apache php://stdin will be empty, in CLI php://input will be empyt instead with no error indication.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=function.file-get-contents&amp;redirect=http://php.net/manual/es/function.file-get-contents.php"><img src="./PHP_ file_get_contents - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+    
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="http://php.net/manual/es/ref.filesystem.php">Funciones del Sistema de Archivos</a>
+    
+                                    <ul class="child-menu-list">
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.basename.php" title="basename">basename</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.chgrp.php" title="chgrp">chgrp</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.chmod.php" title="chmod">chmod</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.chown.php" title="chown">chown</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.clearstatcache.php" title="clearstatcache">clearstatcache</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.copy.php" title="copy">copy</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.delete.php" title="delete">delete</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.dirname.php" title="dirname">dirname</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.disk-free-space.php" title="disk_​free_​space">disk_​free_​space</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.disk-total-space.php" title="disk_​total_​space">disk_​total_​space</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.diskfreespace.php" title="diskfreespace">diskfreespace</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fclose.php" title="fclose">fclose</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.feof.php" title="feof">feof</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fflush.php" title="fflush">fflush</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fgetc.php" title="fgetc">fgetc</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fgetcsv.php" title="fgetcsv">fgetcsv</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fgets.php" title="fgets">fgets</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fgetss.php" title="fgetss">fgetss</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.file-exists.php" title="file_​exists">file_​exists</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/es/function.file-get-contents.php" title="file_​get_​contents">file_​get_​contents</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.file-put-contents.php" title="file_​put_​contents">file_​put_​contents</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.file.php" title="file">file</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fileatime.php" title="fileatime">fileatime</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.filectime.php" title="filectime">filectime</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.filegroup.php" title="filegroup">filegroup</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fileinode.php" title="fileinode">fileinode</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.filemtime.php" title="filemtime">filemtime</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fileowner.php" title="fileowner">fileowner</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fileperms.php" title="fileperms">fileperms</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.filesize.php" title="filesize">filesize</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.filetype.php" title="filetype">filetype</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.flock.php" title="flock">flock</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fnmatch.php" title="fnmatch">fnmatch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fopen.php" title="fopen">fopen</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fpassthru.php" title="fpassthru">fpassthru</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fputcsv.php" title="fputcsv">fputcsv</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fputs.php" title="fputs">fputs</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fread.php" title="fread">fread</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fscanf.php" title="fscanf">fscanf</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fseek.php" title="fseek">fseek</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fstat.php" title="fstat">fstat</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.ftell.php" title="ftell">ftell</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.ftruncate.php" title="ftruncate">ftruncate</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.fwrite.php" title="fwrite">fwrite</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.glob.php" title="glob">glob</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-dir.php" title="is_​dir">is_​dir</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-executable.php" title="is_​executable">is_​executable</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-file.php" title="is_​file">is_​file</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-link.php" title="is_​link">is_​link</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-readable.php" title="is_​readable">is_​readable</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-uploaded-file.php" title="is_​uploaded_​file">is_​uploaded_​file</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-writable.php" title="is_​writable">is_​writable</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.is-writeable.php" title="is_​writeable">is_​writeable</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.lchgrp.php" title="lchgrp">lchgrp</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.lchown.php" title="lchown">lchown</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.link.php" title="link">link</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.linkinfo.php" title="linkinfo">linkinfo</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.lstat.php" title="lstat">lstat</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.mkdir.php" title="mkdir">mkdir</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.move-uploaded-file.php" title="move_​uploaded_​file">move_​uploaded_​file</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.parse-ini-file.php" title="parse_​ini_​file">parse_​ini_​file</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.parse-ini-string.php" title="parse_​ini_​string">parse_​ini_​string</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.pathinfo.php" title="pathinfo">pathinfo</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.pclose.php" title="pclose">pclose</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.popen.php" title="popen">popen</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.readfile.php" title="readfile">readfile</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.readlink.php" title="readlink">readlink</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.realpath-cache-get.php" title="realpath_​cache_​get">realpath_​cache_​get</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.realpath-cache-size.php" title="realpath_​cache_​size">realpath_​cache_​size</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.realpath.php" title="realpath">realpath</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.rename.php" title="rename">rename</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.rewind.php" title="rewind">rewind</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.rmdir.php" title="rmdir">rmdir</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.set-file-buffer.php" title="set_​file_​buffer">set_​file_​buffer</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.stat.php" title="stat">stat</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.symlink.php" title="symlink">symlink</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.tempnam.php" title="tempnam">tempnam</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.tmpfile.php" title="tmpfile">tmpfile</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.touch.php" title="touch">touch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.umask.php" title="umask">umask</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/es/function.unlink.php" title="unlink">unlink</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright © 2001-2016 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/jquery.min.js"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(4).php"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(5).php"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(6).php"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(7).php"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(8).php"></script>
+<script type="text/javascript" src="./PHP_ file_get_contents - Manual_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./PHP_ file_get_contents - Manual_files/to-top@2x.png"></a>
+
+
+
+
+</body></html>
